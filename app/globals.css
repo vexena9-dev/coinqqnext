@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Memaksa transisi fade Swiper agar terlihat */
+.swiper-fade .swiper-slide {
+  transition-property: opacity !important;
+}
+
+.swiper-slide-active {
+  z-index: 10 !important;
+  opacity: 1 !important;
+}
+
+.swiper-slide-next {
+  opacity: 0 !important;
+}
