@@ -11,15 +11,22 @@ import {
   Trophy, 
   Zap, 
   Menu, 
-  Megaphone, 
-  Users, 
-  Link as LinkIcon, 
-  BarChart3, 
+  Gamepad2, 
+  Coins, 
+  Dices, 
+  Spade, 
+  Ticket, 
+  Fish, 
+  Joystick, 
+  Sword,
+  Megaphone,
+  Users,
   Headphones,
+  Link as LinkIcon,
+  BarChart3,
   Info
 } from 'lucide-react';
 
-// Import Swiper React components & styles
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -31,14 +38,19 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Data General untuk Mobile Menu (Agar sama dengan Sidebar Desktop)
   const generalMenuItems = [
-    { name: 'MM Tangkas', icon: <Zap size={20} /> },
-    { name: 'Togel', icon: <Trophy size={20} /> },
-    { name: 'Promosi', icon: <Megaphone size={20} /> },
+    { name: 'Sports', icon: <Trophy size={18} />, status: 'NEW' },
+    { name: 'Esports', icon: <Gamepad2 size={18} />, status: 'NEW' },
+    { name: 'Slots', icon: <Flame size={18} />, status: 'HOT' },
+    { name: 'Casino', icon: <Dices size={18} />, status: '' },
+    { name: 'Togel', icon: <Ticket size={18} />, status: '' },
+    { name: 'Poker', icon: <Spade size={18} />, status: '' },
+    { name: 'E-Lottery', icon: <Coins size={18} />, status: '' },
+    { name: 'Fishing', icon: <Fish size={18} />, status: '' },
+    { name: 'Arcade', icon: <Joystick size={18} />, status: '' },
+    { name: 'MM Tangkas', icon: <Sword size={18} />, status: '' },
     { name: 'Referral', icon: <Users size={20} /> },
     { name: 'Link Alternatif', icon: <LinkIcon size={20} /> },
-    { name: 'RTP Live', icon: <BarChart3 size={20} /> },
     { name: 'Bantuan', icon: <Headphones size={20} /> },
     { name: 'Tentang Kami', icon: <Info size={20} /> },
   ];
@@ -73,11 +85,10 @@ export default function Home() {
   autoplay={{
     delay: 3000,
     disableOnInteraction: false,
-    pauseOnMouseEnter: false // Agar tidak berhenti saat mouse di atas banner
+    pauseOnMouseEnter: false
   }}
 onSwiper={(swiper) => {
   setTimeout(() => {
-    // Hapus baris swiper.autoplay.run() yang bikin error
     swiper.autoplay.start();
   }, 500);
 }}
@@ -165,9 +176,8 @@ onSwiper={(swiper) => {
         </button>
         <button className="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition">
           <Zap size={22} />
-          <span className="text-[10px] font-bold uppercase">Live</span>
+          <span className="text-[10px] font-bold uppercase">RTP Live</span>
         </button>
-        {/* Tombol Menu sebagai pengganti Akun */}
         <button 
           onClick={() => setIsMobileMenuOpen(true)}
           className={`flex flex-col items-center gap-1 transition ${isMobileMenuOpen ? 'text-yellow-500' : 'text-gray-500'}`}
