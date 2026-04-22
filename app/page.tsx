@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import { BANNERS, GAMES } from './data/banners';
+import Link from 'next/link';
 import { 
   Home as HomeIcon, 
   Flame, 
@@ -24,7 +25,7 @@ import {
   Headphones,
   Link as LinkIcon,
   BarChart3,
-  Info
+  Info,
 } from 'lucide-react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -38,39 +39,24 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const generalMenuItems = [
-    { name: 'Sports', icon: <Trophy size={18} />, status: 'NEW' },
-    { name: 'Esports', icon: <Gamepad2 size={18} />, status: 'NEW' },
-    { name: 'Slots', icon: <Flame size={18} />, status: 'HOT' },
-    { name: 'Casino', icon: <Dices size={18} />, status: '' },
-    { name: 'Togel', icon: <Ticket size={18} />, status: '' },
-    { name: 'Poker', icon: <Spade size={18} />, status: '' },
-    { name: 'E-Lottery', icon: <Coins size={18} />, status: '' },
-    { name: 'Fishing', icon: <Fish size={18} />, status: '' },
-    { name: 'Arcade', icon: <Joystick size={18} />, status: '' },
-    { name: 'MM Tangkas', icon: <Sword size={18} />, status: '' },
-    { name: 'Referral', icon: <Users size={20} /> },
-    { name: 'Link Alternatif', icon: <LinkIcon size={20} /> },
-    { name: 'Bantuan', icon: <Headphones size={20} /> },
-    { name: 'Tentang Kami', icon: <Info size={20} /> },
-  ];
-
+const generalMenuItems = [
+  { name: 'Sports', icon: <Trophy size={18} />, status: 'NEW', slug: 'sports' },
+  { name: 'Esports', icon: <Gamepad2 size={18} />, status: 'NEW', slug: 'esports' },
+  { name: 'Slots', icon: <Flame size={18} />, status: 'HOT', slug: 'slots' },
+  { name: 'Casino', icon: <Dices size={18} />, status: '', slug: 'casino' },
+  { name: 'Togel', icon: <Ticket size={18} />, status: '', slug: 'togel' },
+  { name: 'Poker', icon: <Spade size={18} />, status: '', slug: 'poker' },
+  { name: 'E-Lottery', icon: <Coins size={18} />, status: '', slug: 'e-lottery' },
+  { name: 'Fishing', icon: <Fish size={18} />, status: '', slug: 'fishing' },
+  { name: 'Arcade', icon: <Joystick size={18} />, status: '', slug: 'arcade' },
+  { name: 'MM Tangkas', icon: <Sword size={18} />, status: '', slug: 'mm-tangkas' },
+  { name: 'Referral', icon: <Users size={20} />, slug: 'referral' },
+  { name: 'Link Alternatif', icon: <LinkIcon size={20} />, slug: 'link-alternatif' },
+  { name: 'Bantuan', icon: <Headphones size={20} />, slug: 'contact' },
+  { name: 'Tentang Kami', icon: <Info size={20} />, slug: 'about' },
+];
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans">
-      {/* Navbar Atas */}
-      <nav className="border-b border-white/5 bg-[#0f0f0f]/95 backdrop-blur-md px-4 md:px-6 py-3 flex justify-between items-center sticky top-0 z-50">
-        <div className="flex items-center gap-3 group cursor-pointer">
-          <img 
-            src="/logo.webp" 
-            alt="COINQQSLOT Logo" 
-            className="h-7 md:h-10 w-auto object-contain transition group-hover:scale-105"
-          />
-        </div>
-        <div className="flex gap-3">
-          <button onClick={() => setShowModal(true)} className="px-5 py-2 text-xs font-bold bg-[#222] border border-white/10 rounded-lg uppercase">Masuk</button>
-          <button onClick={() => setShowModal(true)} className="px-5 py-2 text-xs font-bold bg-yellow-500 text-black rounded-lg uppercase">Daftar</button>
-        </div>
-      </nav>
 
       <div className="max-w-[1600px] mx-auto flex">
         <Sidebar />
@@ -87,11 +73,7 @@ export default function Home() {
     disableOnInteraction: false,
     pauseOnMouseEnter: false
   }}
-onSwiper={(swiper) => {
-  setTimeout(() => {
-    swiper.autoplay.start();
-  }, 500);
-}}
+
   className="mySwiper"
 >
   {BANNERS.map((banner) => (
@@ -150,42 +132,75 @@ onSwiper={(swiper) => {
           
           <div className="grid grid-cols-1 gap-3">
             {generalMenuItems.map((item) => (
-              <button key={item.name} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition group">
-                <div className="text-yellow-500">{item.icon}</div>
-                <span className="font-bold text-gray-300 group-hover:text-white uppercase tracking-wider">{item.name}</span>
-              </button>
-            ))}
+                <Link 
+                  key={item.name} 
+                  href={`/${item.slug}`}
+                  onClick={() => setIsMobileMenuOpen(false)} // Menutup menu setelah klik
+                  className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="text-yellow-500">{item.icon}</div>
+                    <span className="font-bold text-gray-300 group-hover:text-white uppercase tracking-wider text-sm">
+                      {item.name}
+                    </span>
+                  </div>
+                  
+                  {/* Menampilkan Badge Status jika ada (NEW/HOT) */}
+                  {item.status && (
+                    <span className={`text-[10px] font-black px-2 py-0.5 rounded ${
+                      item.status === 'HOT' ? 'bg-red-500 text-white' : 'bg-yellow-500 text-black'
+                    }`}>
+                      {item.status}
+                    </span>
+                  )}
+                </Link>
+              ))}
             <div className="h-px bg-white/10 my-4" />
-            <button className="flex items-center gap-4 p-4 rounded-2xl bg-yellow-500 text-black font-bold uppercase">
-              <User size={20} />
-              <span>Profil Akun</span>
+            
+            <button className="flex items-center gap-4 p-4 rounded-2xl bg-yellow-2400 text-black font-bold uppercase">
+              <Link
+                  href="https://coinqqslot88.net/login"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-yellow-500 text-black hover:bg-yellow-200 transition mt-4 w-full"
+                  >              
+                  <User size={20} />
+                  <span className="font-bold uppercase text-sm">PROFIL AKUN</span>
+              </Link>
             </button>
           </div>
         </div>
       )}
 
-      {/* Mobile Bottom Nav */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 h-20 bg-[#0f0f0f]/95 border-t border-white/10 px-6 flex justify-between items-center z-50 shadow-2xl">
-        <button className="flex flex-col items-center gap-1 text-yellow-500">
-          <HomeIcon size={22} />
-          <span className="text-[10px] font-bold uppercase">Home</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition">
-          <Trophy size={22} />
-          <span className="text-[10px] font-bold uppercase">Promo</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition">
-          <Zap size={22} />
-          <span className="text-[10px] font-bold uppercase">RTP Live</span>
-        </button>
-        <button 
-          onClick={() => setIsMobileMenuOpen(true)}
-          className={`flex flex-col items-center gap-1 transition ${isMobileMenuOpen ? 'text-yellow-500' : 'text-gray-500'}`}
-        >
-          <Menu size={22} />
-          <span className="text-[10px] font-bold uppercase">Menu</span>
-        </button>
-      </div>
+        {/* Mobile Bottom Nav */}
+        <div className="md:hidden fixed bottom-0 left-0 right-0 h-20 bg-[#0f0f0f]/95 border-t border-white/10 px-6 flex justify-between items-center z-50 shadow-2xl">
+          
+          {/* Tombol Home - Tetap di halaman utama */}
+          <Link href="/" className="flex flex-col items-center gap-1 text-yellow-500">
+            <HomeIcon size={22} />
+            <span className="text-[10px] font-bold uppercase">Home</span>
+          </Link>
+
+          {/* Tombol Promo - Mengarah ke slug 'promosi' */}
+          <Link href="/promosi" className="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition">
+            <Trophy size={22} />
+            <span className="text-[10px] font-bold uppercase">Promo</span>
+          </Link>
+
+          {/* Tombol RTP Live - Mengarah ke slug 'rtp-live' */}
+          <Link href="/rtp-live" className="flex flex-col items-center gap-1 text-gray-500 hover:text-white transition">
+            <Zap size={22} />
+            <span className="text-[10px] font-bold uppercase">RTP Live</span>
+          </Link>
+
+          {/* Tombol Menu - Membuka Overlay Menu Utama */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(true)}
+            className={`flex flex-col items-center gap-1 transition ${isMobileMenuOpen ? 'text-yellow-500' : 'text-gray-500'}`}
+          >
+            <Menu size={22} />
+            <span className="text-[10px] font-bold uppercase">Menu</span>
+          </button>
+        </div>
 
       <style jsx global>{`
         .swiper-pagination-bullet { background: white !important; opacity: 0.3; }
