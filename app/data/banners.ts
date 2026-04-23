@@ -37,10 +37,19 @@ export const BANNERS = [
 ];
 
 export const GAMES = [
-  { id: 1, name: 'The Quest of Excalibur', provider: 'Yggdrasil', rtp: 98.5, img: 'https://cdn-proxy.globalcontentcloud.com/common/default/exclusive/slotmania.webp' },
-  { id: 2, name: 'Fortune Dragon Joy', provider: 'Habanero', rtp: 96.7, img: 'https://cdn.globalcontentcloud.com/promotions/thumbnail_589_.webp' },
-  { id: 3, name: 'Tales of the Piggies', provider: 'IDNSlot', rtp: 98.9, img: 'https://cdn.globalcontentcloud.com/promotions/thumbnail_588_.webp' },
-  { id: 4, name: 'Pirates Fight', provider: 'Microgaming', rtp: 98.37, img: 'https://cdn.globalcontentcloud.com/promotions/thumbnail_567_.webp' }
+  { id: 1, name: 'The Quest of Excalibur', provider: 'Slot Mania', rtp: 98.50, img: 'https://cdn-proxy.globalcontentcloud.com/common/default/exclusive/slotmania.webp' },
+  { id: 2, name: 'Sweet Bonanza Xmas', provider: 'Pragmaticplay', rtp: 96.70, img: 'https://cdn.globalcontentcloud.com/game-images/pragmaticplay/732/thumbnail.webp' },
+  { id: 3, name: 'Tales of the Piggies', provider: 'IDNSlot', rtp: 98.90, img: 'https://cdn.globalcontentcloud.com/game-images/slot-mania/12518/thumbnail.webp' },
+  { id: 4, name: '50.000 Mania', provider: 'Slot Mania', rtp: 98.37, img: 'https://cdn.globalcontentcloud.com/game-images/slot-mania/15510/thumbnail.webp' },
+  { id: 5, name: 'Medusa Multiplier', provider: 'IDNSlot', rtp: 97.80, img: 'https://cdn.globalcontentcloud.com/game-images/idnslot/14145/thumbnail.webp' },
+  { id: 6, name: 'Slot Mania Bonanza', provider: 'Pragmaticplay', rtp: 98.15, img: 'https://cdn.globalcontentcloud.com/game-images/slot-mania/12524/thumbnail.webp' },
+  { id: 7, name: 'Pyramid Bonanza', provider: 'Pragmaticplay', rtp: 96.40, img: 'https://cdn.globalcontentcloud.com/game-images/pragmaticplay/2846/thumbnail.webp' },
+  { id: 8, name: 'Koi Harmony', provider: 'Playtech', rtp: 95.90, img: 'https://cdn.globalcontentcloud.com/game-images/playtech/14394/thumbnail.webp' },
+  { id: 9, name: 'Tanked', provider: 'Nolimit City', rtp: 98.45, img: 'https://cdn.globalcontentcloud.com/game-images/nolimit-city/9505/thumbnail.webp' },
+  { id: 10, name: 'Pirates Fight', provider: 'Nolimit City', rtp: 97.20, img: 'https://cdn.globalcontentcloud.com/game-images/nolimit-city/10387/thumbnail.webp' },
+  { id: 11, name: 'Power Of Odin', provider: 'Microgaming', rtp: 98.88, img: 'https://cdn.globalcontentcloud.com/game-images/idnslot/14168/thumbnail.webp' },
+  { id: 12, name: 'Arowanas Luck', provider: 'Nolimit City', rtp: 96.10, img: 'https://cdn.globalcontentcloud.com/game-images/nolimit-city/12530/thumbnail.webp' },
+  { id: 13, name: 'Koi Gate', provider: 'Habanero', rtp: 98.30, img: 'https://cdn.globalcontentcloud.com/game-images/habanero/52/thumbnail.webp' }
 ];
 
 export const MENU_ITEMS = [

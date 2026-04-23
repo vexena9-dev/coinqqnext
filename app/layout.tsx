@@ -15,13 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "COINQQSLOT | Tempat Hiburan Game Slot Resmi 2026 ",
+  title: "COINQQSLOT | Tempat Hiburan Game Slot Resmi 2026",
   description: "COINQQSLOT adalah platform gaming hiburan resmi 2026 dengan sistem keamanan enkripsi tingkat tinggi dan layanan dukungan 24/7.",
-  keywords: "COINQQSLOT, game slot online, hiburan gaming, platform resmi, keamanan enkripsi, dukungan 24/7, permainan slot terbaru, bonus dan promosi, pengalaman bermain terbaik",
-  robots: "index, follow",
+  keywords: "COINQQSLOT, game slot online, hiburan gaming, platform resmi",
+  
+  alternates: {
+    canonical: 'https://coinqqslotvip.com',
+    types: {
+      'application/amp+html': 'https://coinext-amp.web.app/',
+    },
+  },
+
+  robots: "index, follow", 
+  
   openGraph: {
     title: "COINQQSLOT | Tempat Hiburan Game Slot Resmi 2026",
-    description: "COINQQSLOT adalah platform gaming hiburan resmi 2026 dengan sistem keamanan enkripsi tingkat tinggi dan layanan dukungan 24/7.",
+    description: "COINQQSLOT adalah platform gaming hiburan resmi 2026 dengan sistem keamanan enkripsi tingkat tinggi.",
     url: "https://coinqqslotvip.com",
     siteName: "COINQQSLOT",
     images: [
@@ -29,7 +38,7 @@ export const metadata: Metadata = {
         url: "https://coinqqslotvip.com/panvlet.jpg",
         width: 1200,
         height: 630,
-        alt: "COINQQSLOT - Tempat Hiburan Game Slot Resmi 2026",
+        alt: "COINQQSLOT - Official 2026",
       },
     ],
     locale: "id_ID",
@@ -44,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${geistSans.variable} antialiased bg-[#080808] text-white flex flex-col min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080808] text-white flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-1">
           {children}
