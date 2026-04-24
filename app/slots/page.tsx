@@ -2,19 +2,14 @@
 
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import { Flame, Star, Zap, Trophy, ChevronRight, Play } from 'lucide-react';
+import { Flame, Play } from 'lucide-react';
 import Link from 'next/link';
-
-const SLOT_PROVIDERS = [
-  { id: 'pragmatic', name: 'Pragmatic Play', games: '250+ Games', status: 'HOT', img: 'https://cdn.globalcontentcloud.com/game-images/pragmaticplay/732/thumbnail.webp' },
-  { id: 'pgsoft', name: 'PG Soft', games: '120+ Games', status: 'POPULAR', img: 'https://cdn.globalcontentcloud.com/game-images/idnslot/14145/thumbnail.webp' },
-  { id: 'habanero', name: 'Habanero', games: '180+ Games', status: 'STABLE', img: 'https://cdn.globalcontentcloud.com/game-images/habanero/52/thumbnail.webp' },
-  { id: 'microgaming', name: 'Microgaming', games: '300+ Games', status: 'LEGEND', img: 'https://cdn.globalcontentcloud.com/game-images/idnslot/14168/thumbnail.webp' },
-  { id: 'nolimit', name: 'Nolimit City', games: '80+ Games', status: 'NEW', img: 'https://cdn.globalcontentcloud.com/game-images/nolimit-city/9505/thumbnail.webp' },
-  { id: 'idns', name: 'IDNSlot', games: '100+ Games', status: 'LOCAL PRIDE', img: 'https://cdn.globalcontentcloud.com/game-images/slot-mania/12518/thumbnail.webp' },
-];
+import { GAMES, SITE_CONFIG } from '../data'; 
 
 export default function SlotsPage() {
+  // 2. FILTER DATA: Hanya ambil game yang kategorinya 'slots'
+  const slotGames = GAMES.filter(game => game.category === 'slots');
+
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">
       <div className="max-w-[1600px] mx-auto flex">
@@ -32,38 +27,48 @@ export default function SlotsPage() {
               </h1>
             </div>
             <p className="text-gray-400 text-sm md:text-base font-medium max-w-2xl uppercase tracking-tighter">
-              Koleksi mesin slot online terlengkap dengan fitur jackpot progresif dan provider kelas dunia hanya di COINQQSLOT.
+              Koleksi mesin slot online terlengkap dengan fitur jackpot progresif dan provider kelas dunia hanya di {SITE_CONFIG.name}.
             </p>
           </div>
 
-          {/* Provider Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 mb-16">
-            {SLOT_PROVIDERS.map((provider) => (
-              <div key={provider.id} className="group relative bg-[#111] border border-white/5 rounded-[32px] overflow-hidden hover:border-orange-500/50 transition-all duration-500 p-4">
+          {/* Provider Grid - Sekarang mengambil data dari slotGames */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
+            {slotGames.map((game) => (
+              <div key={game.id} className="group relative bg-[#111] border border-white/5 rounded-[32px] overflow-hidden hover:border-orange-500/50 transition-all duration-500 p-4">
                 <div className="aspect-video rounded-2xl overflow-hidden mb-4 relative">
-                  <img src={provider.img} alt={provider.name} className="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80 group-hover:opacity-100" />
-                  <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded-lg">
-                     <span className="text-[8px] font-black text-orange-500 uppercase italic">{provider.status}</span>
-                  </div>
+                  <img 
+                    src={game.img} 
+                    alt={game.name} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80 group-hover:opacity-100" 
+                  />
+                  {/* Status Otomatis (HOT/NEW) jika ada di data */}
+                  {game.status && (
+                    <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded-lg border border-white/10">
+                       <span className="text-[8px] font-black text-orange-500 uppercase italic">{game.status}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-sm md:text-lg font-black uppercase italic tracking-tighter">{provider.name}</h3>
-                    <p className="text-[10px] text-gray-500 font-bold uppercase">{provider.games}</p>
+                    <h3 className="text-[10px] md:text-sm font-black uppercase italic tracking-tighter leading-tight">
+                      {game.name}
+                    </h3>
+                    <p className="text-[8px] text-gray-500 font-bold uppercase">{game.provider}</p>
                   </div>
-                  <Link href="https://link-daftar-anda.com" className="p-3 bg-orange-500 rounded-full hover:bg-orange-400 transition shadow-lg shadow-orange-500/20">
-                    <Play size={16} className="fill-white text-white ml-0.5" />
+                  {/* Link Menggunakan URL Pusat dari SITE_CONFIG */}
+                  <Link href={SITE_CONFIG.url} className="p-2 md:p-3 bg-orange-500 rounded-full hover:bg-orange-400 transition shadow-lg shadow-orange-500/20">
+                    <Play size={14} className="fill-white text-white ml-0.5" />
                   </Link>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* SEO Article Section dengan Anchor Text */}
+          {/* SEO Article Section (Tetap Sama) */}
           <section className="mt-16 border-t border-white/5 pt-12">
             <div className="bg-[#111] p-6 md:p-10 rounded-[40px] border border-white/5 shadow-inner">
-              <h2 className="text-xl md:text-3xl font-black uppercase italic mb-6 text-orange-500">
-                COINQQSLOT: Situs Judi Slot Online Gacor & Terpercaya 2026
+              <h2 className="text-xl md:text-3xl font-black uppercase italic mb-6 text-orange-500 text-center">
+                {SITE_CONFIG.name}: Situs Judi Slot Online Gacor & Terpercaya 2026
               </h2>
               
               <div className="prose prose-invert max-w-none text-gray-400 text-xs md:text-sm leading-relaxed space-y-4 font-medium uppercase tracking-tight">

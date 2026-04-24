@@ -16,7 +16,7 @@ export const PROMOS = [
 ];
 
 export const CONTACT_INFO = {
-  whatsapp: "https://wa.me/yournumber",
-  livechat: "https://yourlivechatlink.com",
-  telegram: "https://t.me/yourchannel"
+  whatsapp: "https://t.ly/WAofcCoinqqslot",
+  livechat: "https://t.ly/Lchatcoin",
+  telegram: "https://t.ly/TeleOfcCoinqqslot"
 };

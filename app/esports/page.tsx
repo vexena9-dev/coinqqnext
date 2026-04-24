@@ -2,55 +2,15 @@
 
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import { Gamepad2, Rocket, Target, Monitor, ChevronRight } from 'lucide-react';
+import { Gamepad2, Rocket, Target, Monitor } from 'lucide-react';
 import Link from 'next/link';
-
-const ESPORTS_GAMES = [
-  {
-    id: 'dota2',
-    name: 'Dota 2',
-    provider: 'SABA Esports',
-    image: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753625065/imgi_19_e-sabaesports_bcbak4.jpg',
-    odds: 'ODDS TERTINGGI',
-  },
-  {
-    id: 'mlbb',
-    name: 'Mobile Legends',
-    provider: 'TF Gaming',
-    image: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753625069/imgi_20_e-tfgaming_f2ycti.jpg',
-    odds: 'LIVE STREAM',
-  },
-  {
-    id: 'csgo',
-    name: 'CS:GO / CS2',
-    provider: 'CMD Esports',
-    image: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753625072/imgi_21_e-ftesport_prgyu5.jpg',
-    odds: 'FAST MARKET',
-  },
-  {
-    id: 'ns-soft',
-    name: 'nSoft Esports',
-    provider: 'NSoft Esports',
-    image: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753625056/imgi_17_nsoft_ed3u7k.jpg',
-    odds: 'HOT MATCH',
-  },
-  {
-    id: 'sportgg',
-    name: 'SportGG',
-    provider: 'Sportgg Esports',
-    image: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1775366587/imgi_15_sportgg_gyg11p.jpg',
-    odds: 'STABLE',
-  },
-  {
-    id: 'valorant',
-    name: 'Valorant',
-    provider: 'SBO Esports',
-    image: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1775367189/imgi_127_20241105100958778_f0gsri.webp',
-    odds: 'POPULAR',
-  }
-];
+// 1. IMPORT DARI PUSAT DATA
+import { GAMES, SITE_CONFIG } from '../data'; 
 
 export default function EsportsPage() {
+  // 2. FILTER DATA: Hanya ambil kategori 'esports'
+  const esportsGames = GAMES.filter(game => game.category === 'esports');
+
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">
       <div className="max-w-[1600px] mx-auto flex">
@@ -67,8 +27,8 @@ export default function EsportsPage() {
                 Esports Betting Center
               </h1>
             </div>
-            <p className="text-gray-400 text-sm md:text-base font-medium max-w-2xl uppercase tracking-tighter">
-              Akses taruhan game kompetitif terbaik dunia dengan pasaran paling update dan fitur live streaming HD.
+            <p className="text-gray-400 text-sm md:text-base font-medium max-w-2xl uppercase tracking-tighter leading-tight">
+              Akses taruhan game kompetitif terbaik dunia di {SITE_CONFIG.name} dengan pasaran paling update.
             </p>
           </div>
 
@@ -80,35 +40,47 @@ export default function EsportsPage() {
               { icon: <Target size={18} />, label: 'Pro Markets' },
               { icon: <Gamepad2 size={18} />, label: 'All Titles' },
             ].map((feature, i) => (
-              <div key={i} className="bg-purple-500/5 border border-purple-500/10 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 text-purple-400">
+              <div key={i} className="bg-purple-500/5 border border-purple-500/10 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 text-purple-400 hover:bg-purple-500/10 transition-colors cursor-default">
                 {feature.icon}
-                <span className="text-[9px] font-black uppercase">{feature.label}</span>
+                <span className="text-[9px] font-black uppercase tracking-widest">{feature.label}</span>
               </div>
             ))}
           </div>
 
-          {/* Games Grid */}
+          {/* Games Grid - Mengambil data dari esportsGames di data/games.ts */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {ESPORTS_GAMES.map((game) => (
-              <div key={game.id} className="group relative bg-[#111] border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
+            {esportsGames.map((game) => (
+              <Link key={game.id} href={SITE_CONFIG.url} className="group relative bg-[#111] border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500">
                 <div className="aspect-[4/5] relative">
-                  <img src={game.image} alt={game.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent" />
+                  <img 
+                    src={game.img} 
+                    alt={game.name} 
+                    className="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90" />
+                  
                   <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-[8px] bg-purple-600 px-2 py-0.5 rounded font-black mb-1 inline-block">{game.odds}</span>
-                    <h3 className="text-sm md:text-base font-black uppercase italic">{game.name}</h3>
-                    <p className="text-[9px] text-gray-500 font-bold uppercase">{game.provider}</p>
+                    {/* Badge Status/Odds otomatis */}
+                    <span className="text-[8px] bg-purple-600 px-2 py-0.5 rounded font-black mb-2 inline-block shadow-lg">
+                       {game.status || 'LIVE ODDS'}
+                    </span>
+                    <h3 className="text-sm md:text-base font-black uppercase italic leading-none mb-1 group-hover:text-purple-400 transition-colors">
+                      {game.name}
+                    </h3>
+                    <p className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">
+                      Provider: {game.provider}
+                    </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
-          {/* SEO Article dengan Anchor Text */}
+          {/* SEO Article Section */}
           <section className="mt-16 border-t border-white/5 pt-12">
             <div className="bg-[#111] p-6 md:p-10 rounded-[40px] border border-white/5 shadow-inner">
               <h2 className="text-xl md:text-3xl font-black uppercase italic mb-6 text-purple-500">
-                COINQQSLOT: Portal Taruhan Esports Terlengkap & Terpercaya
+                {SITE_CONFIG.name}: Portal Taruhan Esports Terlengkap & Terpercaya
               </h2>
               
               <div className="prose prose-invert max-w-none text-gray-400 text-xs md:text-sm leading-relaxed space-y-4 font-medium uppercase tracking-tight">
