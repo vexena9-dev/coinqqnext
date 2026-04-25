@@ -92,4 +92,56 @@ export const GAMES: Game[] = [
   { id: 510, name: 'Domino Bet', provider: 'poker', category: 'poker', rtp: 93.0, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1775376727/imgi_74_202410241346444361_xbyhsl.png' },
   { id: 511, name: 'Joker Cash', provider: 'poker', category: 'poker', rtp: 92.5, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1775376728/imgi_75_202509161323265047_xco7vs.webp' },
   { id: 512, name: 'Joker Spin', provider: 'poker', category: 'poker', rtp: 92.0, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1775376714/imgi_76_202504292247493952_fqd5ap.webp' },
+
+];
+
+export const PROMOS = [
+  {
+    id: 1,
+    title: "Welcome Bonus 100%",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1776154943/SLIDE_3_COINQQSLOT_ylv6pe.webp",
+    description: "Dapatkan bonus sambutan 100% hingga Rp1.000.000 untuk pemain baru! Daftar sekarang dan gandakan peluang menang Anda di Coinqqslot!"
+  },
+    {
+    id: 2,
+    title: "Bonus Deposit Harian",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_22_promotion_29_production_43_ekwgqf.webp",
+    description: "Nikmati bonus deposit harian hingga 20%! Setiap kali Anda melakukan deposit, dapatkan tambahan kredit untuk bermain lebih banyak dan menang lebih besar di Coinqqslot!"
+    },
+    {
+    id: 3,
+    title: "Cashback Mingguan 10%",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460899/imgi_23_promotion_24_production_43_chajnz.webp",
+    description: "Dapatkan cashback mingguan 10% untuk semua kerugian Anda! Mainkan dengan tenang di Coinqqslot, karena kami memberikan perlindungan ekstra untuk setiap taruhan yang Anda pasang!"
+  },
+  { id: 4,
+    title: "Referral Bonus 50%",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1776154943/SLIDE_4_COINQQSLOT_ql9h8c.webp",
+    description: "Ajak teman Anda bergabung di Coinqqslot dan dapatkan bonus referral 50% dari deposit pertama mereka! Semakin banyak teman yang Anda ajak, semakin besar bonus yang bisa Anda kumpulkan!"
+  },
+  { id: 5,
+    title: "Turnamen Slot Mingguan",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460903/imgi_30_promotion_11_production_43_isys8e.webp",
+    description: "Ikuti turnamen slot mingguan kami dan menangkan hadiah besar! Bersaing dengan pemain lain untuk meraih posisi teratas di leaderboard dan dapatkan hadiah menarik setiap minggunya di Coinqqslot!"
+  },
+  { id: 6,
+    title: "Bonus Deposit Pertama",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_17_promotion_10_production_43_zufykb.webp",
+    description: "Dapatkan bonus deposit pertama 150% hingga Rp1.500.000! Mulai petualangan Anda di Coinqqslot dengan modal lebih besar dan peluang menang yang lebih tinggi!"
+  },
+  { id: 7,
+    title: "Bonus Reload 5%",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_24_promotion_30_production_43_zcomzc.webp",
+    description: "Nikmati bonus reload 50% setiap kali Anda melakukan deposit ulang! Pastikan untuk memanfaatkan penawaran ini dan tingkatkan saldo Anda untuk bermain lebih banyak di Coinqqslot!"
+  },
+  { id: 8,
+    title: "Bonus Petir Merah",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_19_promotion_40_production_43_qempg4.webp",
+    description: "Dapatkan bonus petir merah 10% untuk semua kerugian Anda! Mainkan dengan tenang di Coinqqslot, karena kami memberikan perlindungan ekstra untuk setiap taruhan yang Anda pasang!"
+  },
+  { id: 9,
+    title: "Bonus Cashback VIP 20%",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1771059783/imgi_19_16991_695c4069a92dd6.23713114_rwcrtx.webp",
+    description: "Dapatkan cashback VIP 20% untuk semua kerugian Anda! Mainkan dengan tenang di Coinqqslot, karena kami memberikan perlindungan ekstra untuk setiap taruhan yang Anda pasang, khusus untuk anggota VIP kami!"
+  },
 ];

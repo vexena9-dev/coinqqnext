@@ -20,3 +20,17 @@ export const CONTACT_INFO = {
   livechat: "https://t.ly/Lchatcoin",
   telegram: "https://t.ly/TeleOfcCoinqqslot"
 };
+
+export const CONTENT_DATA: Record<string, any> = {
+  faq: {
+    title: "FAQ - Pertanyaan Umum",
+    description: "Jawaban lengkap untuk kendala teknis dan transaksi Anda.",
+    content: "Di sini kamu bisa memasukkan list pertanyaan seperti cara deposit, withdraw, dan keamanan akun."
+  },
+  terms: {
+    title: "Syarat & Ketentuan",
+    description: "Regulasi resmi penggunaan platform COINQQSLOT.",
+    content: "Berisi aturan main, batasan usia 18+, dan kebijakan satu akun per pemain."
+  },
+  // ... data lainnya
+};

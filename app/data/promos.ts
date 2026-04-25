@@ -1,0 +1,42 @@
+export const PROMOS = [
+  {
+    id: 1,
+    title: "Welcome Bonus 150%",
+    desc: "Dapatkan bonus deposit pertama 150% hingga Rp1.500.000! Mulai petualangan Anda di Coinqqslot dengan modal lebih besar.",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_17_promotion_10_production_43_zufykb.webp",
+    minDepo: "IDR 50.000",
+    maxBonus: "IDR 1.500.000",
+    tag: "Member Baru",
+    color: "from-orange-600 to-yellow-500",
+  },
+  {
+    id: 7,
+    title: "Bonus Reload 50%",
+    desc: "Nikmati bonus reload 50% setiap kali Anda melakukan deposit ulang! Pastikan untuk memanfaatkan penawaran ini.",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_24_promotion_30_production_43_zcomzc.webp",
+    minDepo: "IDR 50.000",
+    maxBonus: "Unlimited",
+    tag: "Reload Bonus",
+    color: "from-blue-600 to-indigo-500",
+  },
+  {
+    id: 8,
+    title: "Bonus Petir Merah 10%",
+    desc: "Dapatkan bonus petir merah 10% untuk semua kerugian Anda! Mainkan dengan tenang di Coinqqslot.",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1770460898/imgi_19_promotion_40_production_43_qempg4.webp",
+    minDepo: "IDR 100.000",
+    maxBonus: "Unlimited",
+    tag: "Special Promo",
+    color: "from-red-600 to-pink-600",
+  },
+  {
+    id: 9,
+    title: "Bonus Cashback VIP 20%",
+    desc: "Dapatkan cashback VIP 20% untuk semua kerugian Anda! Kami memberikan perlindungan ekstra untuk member setia.",
+    img: "https://res.cloudinary.com/dnjhs0kqu/image/upload/v1771059783/imgi_19_16991_695c4069a92dd6.23713114_rwcrtx.webp",
+    minDepo: "IDR 100.000",
+    maxBonus: "Unlimited",
+    tag: "VIP Cashback",
+    color: "from-purple-600 to-fuchsia-500",
+  }
+];

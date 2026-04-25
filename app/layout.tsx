@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080808] text-white flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-1">

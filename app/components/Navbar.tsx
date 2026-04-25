@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MENU_ITEMS } from '../data/banners';
 export default function Navbar() {
+
   return (
     <header className="sticky top-0 z-50 bg-[#080808]/90 backdrop-blur-md border-b border-white/5 p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
