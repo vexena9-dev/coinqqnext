@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function ArcadePage() {
     
-  const arcadeGames = GAMES.filter(game => game.category === 'arcade');
+  const arcadeGames = GAMES.filter(game => (game as any).category === 'arcade');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">
@@ -67,7 +67,9 @@ export default function ArcadePage() {
                   
                   {/* Neon Badge */}
                   <div className="absolute top-4 right-4 bg-pink-600/90 backdrop-blur-md px-3 py-1 rounded-full border border-pink-400/30">
-                    <span className="text-[8px] font-black text-white italic uppercase tracking-widest">{game.status || 'ARCADE'}</span>
+                    <span className="text-[8px] font-black text-white italic uppercase tracking-widest">
+                     {(game as any).status || 'ARCADE'}
+                    </span>
                   </div>
                 </div>
 

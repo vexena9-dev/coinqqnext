@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function PokerPage() {
   // Filter data kategori poker dari pusat data
-  const pokerGames = GAMES.filter(game => game.category === 'poker');
+  const pokerGames = (GAMES as any[]).filter(game => game.category === 'poker');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

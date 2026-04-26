@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function FishingPage() {
   // Filter data kategori fishing dari pusat data
-  const fishingGames = GAMES.filter(game => game.category === 'fishing');
+  const fishingGames = (GAMES as any[]).filter(game => game.category === 'fishing');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

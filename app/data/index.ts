@@ -1,5 +1,5 @@
-export * from './banners';
-export * from './games';
+export { BANNERS } from './banners'; // Ambil PROMOS saja dari banners
+export { GAMES, type Game } from './games'; // Ambil GAMES dan Interface dari games
 
 export const SITE_CONFIG = {
   name: 'COINQQSLOT',

@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function TogelPage() {
   // Filter data kategori togel dari pusat data
-  const togelGames = GAMES.filter(game => game.category === 'togel');
+  const togelGames = (GAMES as any[]).filter(game => game.category === 'togel');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

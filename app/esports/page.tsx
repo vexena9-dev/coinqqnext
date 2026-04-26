@@ -9,7 +9,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function EsportsPage() {
   // 2. FILTER DATA: Hanya ambil kategori 'esports'
-  const esportsGames = GAMES.filter(game => game.category === 'esports');
+  const esportsGames = (GAMES as any[]).filter(game => game.category === 'esports');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

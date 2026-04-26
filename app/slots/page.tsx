@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function SlotsPage() {
   // 2. FILTER DATA: Hanya ambil game yang kategorinya 'slots'
-  const slotGames = GAMES.filter(game => game.category === 'slots');
+  const slotGames = (GAMES as any[]).filter(game => game.category === 'slots');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

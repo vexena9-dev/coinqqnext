@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function TangkasPage() {
   // Filter data kategori tangkas dari pusat data
-  const tangkasGames = GAMES.filter(game => game.category === 'tangkas');
+  const tangkasGames = (GAMES as any[]).filter(game => game.category === 'tangkas');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { GAMES, SITE_CONFIG } from '../data';
 
 export default function CasinoPage() {
-  const casinoGames = GAMES.filter(game => game.category === 'casino');
+  const casinoGames = (GAMES as any[]).filter(game => game.category === 'casino');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">

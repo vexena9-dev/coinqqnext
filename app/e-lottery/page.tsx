@@ -8,7 +8,7 @@ import { GAMES, SITE_CONFIG } from '../data';
 
 export default function ELotteryPage() {
   // Filter data kategori togel/e-lottery dari pusat data
-  const eLotteryGames = GAMES.filter(game => game.category === 'togel');
+  const eLotteryGames = (GAMES as any[]).filter(game => game.category === 'togel');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white font-sans relative">
