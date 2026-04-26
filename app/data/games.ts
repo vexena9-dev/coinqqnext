@@ -5,7 +5,7 @@ export interface Game {
   category: 'slots' | 'sports' | 'esports' | 'casino' | 'togel' | 'poker' | 'elottery' | 'fishing' | 'arcade' | 'tangkas';
   rtp: number;
   img: string;
-  status?: 'HOT' | 'NEW' | 'POPULAR';
+  status?: string;
 }
 
 export const GAMES: Game[] = [

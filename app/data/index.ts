@@ -1,13 +1,3 @@
-
-export interface Game {
-  id: number;
-  name: string;
-  provider: string;
-  rtp: number;
-  img: string;
-  category: string;
-}
-
 export * from './banners';
 export * from './games';
 
@@ -17,7 +7,6 @@ export const SITE_CONFIG = {
   description: 'Situs Judi Online Terpercaya dengan RTP Live Gacor 2026',
 };
 
-// Tambahan opsional untuk navigasi agar konsisten di seluruh web
 export const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Slots', href: '/slots' },

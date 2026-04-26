@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { GAMES, SITE_CONFIG } from '../data';
 
 export default function ArcadePage() {
-
+    
   const arcadeGames = GAMES.filter(game => game.category === 'arcade');
 
   return (
