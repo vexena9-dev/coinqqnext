@@ -1,3 +1,13 @@
+
+export interface Game {
+  id: number;
+  name: string;
+  provider: string;
+  rtp: number;
+  img: string;
+  category: string;
+}
+
 export * from './banners';
 export * from './games';
 
@@ -29,5 +39,4 @@ export const NAV_LINKS = [
   { name: 'Blog', href: '/blog' },
   { name: 'Login', href: '/login' },
   { name: 'Register', href: '/register' },
-
 ];
