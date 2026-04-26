@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: slug === '' ? 1 : 0.8,
   }));
 
-  // 2. Sitemap untuk Game (SEO Konten)
+
   const gameRoutes: MetadataRoute.Sitemap = (GAMES || []).map((game) => ({
     url: `${baseUrl}/games/${game.id}`, 
     lastModified: new Date(),

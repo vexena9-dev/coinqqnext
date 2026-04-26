@@ -97,6 +97,7 @@ export const GAMES: Game[] = [
   { id: 701, name: 'Fishing', provider: 'fishing', category: 'fishing', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753624776/imgi_62_FishingLegend_dpdkra.webp' },
   { id: 801, name: 'Arcade', provider: 'arcade', category: 'arcade', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp' },
   { id: 901, name: 'Tangkas', provider: 'tangkas', category: 'tangkas', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753624040/imgi_24_mm-banner_mmm4l5.webp' },
+  
 
 ];
 
