@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import { Spades, ShieldCheck, Users, Trophy, Play } from 'lucide-react';
+import { Spade, ShieldCheck, Users, Trophy, Play } from 'lucide-react';
 import Link from 'next/link';
 import { GAMES, SITE_CONFIG } from '../data';
 
@@ -20,7 +20,7 @@ export default function PokerPage() {
           <div className="mb-10 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
               <div className="p-2 bg-indigo-600/20 rounded-lg text-indigo-400">
-                <Spades size={28} className="fill-indigo-400" />
+                <Spade size={28} className="fill-indigo-400" />
               </div>
               <h1 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-600">
                 Poker & Card Games
@@ -37,7 +37,7 @@ export default function PokerPage() {
               { icon: <Users size={18} />, label: '100% Player vs Player' },
               { icon: <ShieldCheck size={18} />, label: 'No Bot System' },
               { icon: <Trophy size={18} />, label: 'Jackpot Melimpah' },
-              { icon: <Spades size={18} />, label: 'Turnamen Mingguan' },
+              { icon: <Spade size={18} />, label: 'Turnamen Mingguan' },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center justify-center p-4 bg-indigo-600/5 border border-indigo-600/20 rounded-2xl text-indigo-400 group hover:bg-indigo-600/10 transition-all">
                 {item.icon}
