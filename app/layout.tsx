@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "COINQQSLOT adalah platform gaming hiburan resmi 2026 dengan sistem keamanan enkripsi tingkat tinggi dan layanan dukungan 24/7.",
   keywords: "COINQQSLOT, game slot online, hiburan gaming, platform resmi",
   verification: {
-    google: "KODE_VERIFIKASI_DARI_GOOGLE_SEARCH_CONSOLE",
+    google: "R-FFp32Y0O_tqPIFdvycS-SqnitL9b1uOEQaWQ4g1sU",
   },
   
   alternates: {
