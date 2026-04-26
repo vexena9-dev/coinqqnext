@@ -14,10 +14,10 @@ export default function Navbar() {
         </Link>
 
         <div className="flex gap-4">
-          <Link href="https://coinqqslot88.net/login" className="px-5 py-2 text-sm font-bold text-white border border-white/20 rounded-lg hover:bg-white/5 transition">
+          <Link href="https://freebit-coin.com/go/cqs/" className="px-5 py-2 text-sm font-bold text-white border border-white/20 rounded-lg hover:bg-white/5 transition">
             MASUK
           </Link>
-          <Link href="https://coinqqslot88.net/register" className="px-5 py-2 text-sm font-bold text-black bg-yellow-500 rounded-lg hover:bg-yellow-400 transition shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+          <Link href="https://freebit-coin.com/go/cqs/" className="px-5 py-2 text-sm font-bold text-black bg-yellow-500 rounded-lg hover:bg-yellow-400 transition shadow-[0_0_15px_rgba(234,179,8,0.3)]">
             DAFTAR
           </Link>
         </div>

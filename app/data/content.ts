@@ -10,7 +10,7 @@ export const PROMOS = [
     id: 2,
     title: "Lucky Spin Harian",
     description: "Putar rodanya dan menangkan hadiah setiap hari.",
-    image: "/banners/promo2.jpg",
+    image: "/panvlet.jpg",
     slug: "lucky-spin"
   }
 ];
@@ -32,5 +32,5 @@ export const CONTENT_DATA: Record<string, any> = {
     description: "Regulasi resmi penggunaan platform COINQQSLOT.",
     content: "Berisi aturan main, batasan usia 18+, dan kebijakan satu akun per pemain."
   },
-  // ... data lainnya
+
 };

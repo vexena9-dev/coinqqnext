@@ -18,11 +18,14 @@ export const metadata: Metadata = {
   title: "COINQQSLOT | Tempat Hiburan Game Slot Resmi 2026",
   description: "COINQQSLOT adalah platform gaming hiburan resmi 2026 dengan sistem keamanan enkripsi tingkat tinggi dan layanan dukungan 24/7.",
   keywords: "COINQQSLOT, game slot online, hiburan gaming, platform resmi",
+  verification: {
+    google: "KODE_VERIFIKASI_DARI_GOOGLE_SEARCH_CONSOLE",
+  },
   
   alternates: {
     canonical: 'https://coinqqslotvip.com',
     types: {
-      'application/amp+html': 'https://coinext-amp.web.app/',
+      'application/amp+html': 'https://piecescafe.com/coinqqnext/',
     },
   },
 
