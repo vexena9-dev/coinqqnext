@@ -95,7 +95,14 @@ export const GAMES: Game[] = [
 
   { id: 601, name: 'Elottery', provider: 'elottery', category: 'elottery', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1775382626/imgi_62_banner_lotto_uxa21t.webp' },
   { id: 701, name: 'Fishing', provider: 'fishing', category: 'fishing', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753624776/imgi_62_FishingLegend_dpdkra.webp' },
-  { id: 801, name: 'Arcade', provider: 'arcade', category: 'arcade', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp' },
+  { id: 801, name: 'Coin Toss', provider: 'Pragmaticplay', category: 'arcade', rtp: 97.5, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp', status: 'HOT' },
+  { id: 802, name: 'Virtual Racing', provider: 'Spadegaming', category: 'arcade', rtp: 96.2, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp', status: 'NEW' },
+  { id: 803, name: 'Climb to Victory', provider: 'CQ9', category: 'arcade', rtp: 95.8, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp', status: 'POPULAR' },
+  { id: 804, name: 'Bingo Blast', provider: 'Pragmaticplay', category: 'arcade', rtp: 94.5, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp' },
+  { id: 805, name: 'Keno Deluxe', provider: 'Spadegaming', category: 'arcade', rtp: 93.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp' },
+  { id: 806, name: 'Sea of Fortune', provider: 'CQ9', category: 'arcade', rtp: 96.8, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp', status: 'HOT' },
+  { id: 807, name: 'Arcade Dice', provider: 'Pragmaticplay', category: 'arcade', rtp: 95.1, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp' },
+  { id: 808, name: 'Dragon Pachinko', provider: 'CQ9', category: 'arcade', rtp: 94.9, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753623890/imgi_63_thumbnail_v3hfhm.webp', status: 'NEW' },
   { id: 901, name: 'Tangkas', provider: 'tangkas', category: 'tangkas', rtp: 68.7, img: 'https://res.cloudinary.com/dnjhs0kqu/image/upload/v1753624040/imgi_24_mm-banner_mmm4l5.webp' },
   
 

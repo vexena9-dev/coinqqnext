@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { GAMES, SITE_CONFIG } from '../data';
 
 export default function ArcadePage() {
-  // Filter data kategori arcade dari pusat data
+
   const arcadeGames = GAMES.filter(game => game.category === 'arcade');
 
   return (
@@ -15,7 +15,7 @@ export default function ArcadePage() {
       <div className="max-w-[1600px] mx-auto flex">
         <Sidebar />
 
-        <main className="flex-1 p-4 md:p-8 pb-24">
+        <div className="flex-1 p-4 md:p-8 pb-24">
           {/* Header Section - Retro Neon Theme */}
           <div className="mb-10 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
@@ -49,6 +49,11 @@ export default function ArcadePage() {
           </div>
 
           {/* Arcade Games Grid - Portrait Style */}
+          {arcadeGames.length === 0 ? (
+            <div className="text-center py-20 mb-16">
+              <p className="text-gray-500 font-bold uppercase tracking-widest text-sm">Tidak ada game arcade tersedia saat ini.</p>
+            </div>
+          ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
             {arcadeGames.map((game) => (
               <div key={game.id} className="group relative bg-[#111] rounded-[35px] overflow-hidden border border-white/5 hover:border-pink-500/50 transition-all duration-500 shadow-2xl">
@@ -62,7 +67,7 @@ export default function ArcadePage() {
                   
                   {/* Neon Badge */}
                   <div className="absolute top-4 right-4 bg-pink-600/90 backdrop-blur-md px-3 py-1 rounded-full border border-pink-400/30">
-                    <span className="text-[8px] font-black text-white italic uppercase tracking-widest">ARCADE</span>
+                    <span className="text-[8px] font-black text-white italic uppercase tracking-widest">{game.status || 'ARCADE'}</span>
                   </div>
                 </div>
 
@@ -84,6 +89,7 @@ export default function ArcadePage() {
               </div>
             ))}
           </div>
+          )}
 
           {/* SEO Article Section - Arcade & Mini Games Focus */}
           <section className="mt-24 border-t border-white/5 pt-16">
@@ -145,7 +151,7 @@ export default function ArcadePage() {
               </div>
             </div>
           </section>
-        </main>
+        </div>
       </div>
     </div>
   );
