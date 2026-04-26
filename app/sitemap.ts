@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next'
-// Pastikan path import ini benar sesuai folder kamu
-import { GAMES } from './data/banners' 
+import { GAMES } from './data' 
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://coinqqslotvip.com'
@@ -37,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // 2. Sitemap untuk Game (SEO Konten)
-  const gameRoutes = GAMES.map((game) => ({
+  const gameRoutes: MetadataRoute.Sitemap = (GAMES || []).map((game) => ({
     url: `${baseUrl}/games/${game.id}`, 
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
