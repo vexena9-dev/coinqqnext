@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://coinqqslotvip.com',
     types: {
-      'application/amp+html': 'https://piecescafe.com/coinqqnext/',
+      'application/amp+html': 'https://terbangsampaikebulan.d26s1yw2h7plqh.amplifyapp.com/',
     },
   },
 
